@@ -1,8 +1,8 @@
 const express=require('express');
 const app=express();
-const mongoose=require('mongoose')
+const bookRoutes = require("./routes/bookRoutes.js")
 
-const port=9000;
+const port=5000;
 
 const mongoDB=require("./db");
 
@@ -14,9 +14,11 @@ app.use((req,res,next)=>{
     );
     next();
 })
-
 app.use(express.json());
+mongoDB();
 
+
+app.use('/book',bookRoutes)
 
 app.get('/',(req,res)=>{
     res.send("hello");
@@ -24,7 +26,7 @@ app.get('/',(req,res)=>{
 
 
 
- app.use('/api',require('./routes/createUser'))
+//  app.use('/api',require('./routes/createUser'))
 
 app.listen(port,()=>{
     console.log(`listning on ${port}`)
