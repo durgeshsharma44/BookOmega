@@ -1,5 +1,30 @@
 .App {
   text-align: center;
+ 
+}
+body {
+  font-family: "Audiowide", sans-serif;
+}
+.navbar {
+  font-family: "Audiowide", sans-serif;
+}
+.custom-navbar {
+  background-color: rgb(255, 255, 79) !important;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.custom-navbar:hover {
+  background-color: #ada619 !important; /* Slightly blackish */
+}
+
+.custom-navbar .nav-link {
+  color: black !important;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.custom-navbar .nav-link:hover {
+  color: white !important;
 }
 
 .subjects{
